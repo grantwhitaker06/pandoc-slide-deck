@@ -20,8 +20,8 @@
 * Pandoc key/val pairs are passed into the coorisponding `$<varname>$`
 * Variables are defined using link labels at the top of the Markdown
   file
-  * They will not show up in the document
-  * I realize this is hacky, but necessary to keep Markdown integrety
+    + They will not show up in the document
+    + I realize this is hacky, but necessary to keep Markdown integrety
 
 -------------------------------------------------------------------
 
@@ -30,7 +30,7 @@
 * list item 1
 * list item 2
 * list item 3
-  * sublist item
+    + sublist item
 
 ## Code example
 
