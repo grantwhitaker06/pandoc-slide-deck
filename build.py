@@ -2,23 +2,73 @@
 import re
 import subprocess
 
-flags = "--standalone -t revealjs --section-divs --template=template.html --no-highlight"
-variables = ""
+default_variables = {'title': 'title goes here',
+                     'author': 'author name',
+                     'date': 'date here',
+                     'subtitle': 'subtitle here',
+                     'transition': 'zoom'}
 
-with open("slides.md") as slides:
-    lines = slides.readlines()
-    v_list = []
-    for line in lines:
-        if "---" in line:
-            break
-        v_list.append(line)
+default_flags = "--standalone -t revealjs --section-divs --no-highlight"
 
-for v in v_list:
-    if len(v) > 2:
-        key = (re.compile('.*?((?:[a-z][a-z]+))', re.IGNORECASE|re.DOTALL)).search(v).group(1)
-        val = (re.sub('(\\[.*?\\])(:)(\\s+)(<)(>)(\\s+)(.)', '', v))[:-2]
-        variables += "-M " + key + "=\"" + val.strip() + "\" "
+def readSlidesMd(f):
+    with open(f) as slides:
+        lines = slides.readlines()
+        v_list = []
+        for line in lines:
+            if "---" in line:
+                break
+            v_list.append(line)
 
-command = "pandoc " + flags + " slides.md " + variables + " -o index.html"
+    return v_list
+
+def parseVarsFromComments(v_list, variables):
+    '''
+    Parses a list of the Markdown "Comments" and gets the variables from them.
+    Default variable values will be overwritten with the newly parsed values.
+
+    @param v_list list of markdown comments
+    @param variables dictionary of default variable values
+    @return variables dictionary
+    '''
+    for v in v_list:
+        if len(v) > 2:
+            key = (re.compile('.*?((?:[a-z][a-z]+))', re.IGNORECASE|re.DOTALL)).search(v).group(1)
+            val = (re.sub('(\\[.*?\\])(:)(\\s+)(<)(>)(\\s+)(.)', '', v))[:-2]
+            variables[key] = val.strip()
+
+    return variables
+
+def buildVariablesString(variables):
+    '''
+    Given all the parsed variables, build the command string including the standard flags
+
+    @param variables dictionary of variable values
+    @param flags string of the standard flags
+
+    @return string
+    '''
+    vstr = ""
+    for key,val in variables.iteritems():
+        vstr += "-M " + key + "=\"" + val + "\" "
+    
+    return vstr 
+
+def templateStringParameter(template_value=None):
+    if template_value:
+        return " --template=" + template_value + ".html "
+    else:
+        return " --template=default.html "
+
+def buildFlagsString(default_flags, variables):
+    return default_flags + templateStringParameter(variables['template'])
+
+def buildCommandString(flags, variables):
+    return "pandoc " + flags + " slides.md " + variables + " -o index.html"
+
+unparsed_variables = readSlidesMd("slides.md")
+parsed_variables = parseVarsFromComments(unparsed_variables, default_variables)
+variable_string = buildVariablesString(parsed_variables)
+flags = buildFlagsString(default_flags, parsed_variables)
+command = buildCommandString(flags, variable_string)
 print command
 subprocess.call(command, shell=True)

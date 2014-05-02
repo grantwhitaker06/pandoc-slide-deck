@@ -1,40 +1,20 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <title>Slide Decks with Pandoc</title>
-
-    <meta name="description" content="Describe Me">
-    <meta name="author" content="Kyle Gwinnup">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-    <link rel="stylesheet" href="reveal.js/css/theme/gwinnup.css" id="theme">
-
-    <!-- For syntax highlighting -->
-    <!-- <link rel="stylesheet" href="highlight/styles/pojoaque.css"> -->
-    <link rel="stylesheet" href="highlight/styles/zenburn.css">
-
-    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-    <script>
-      document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-    </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Kyle Gwinnup" />
+  <title>Slide Decks with Pandoc</title>
+  <style type="text/css">code{white-space: pre;}</style>
 </head>
 <body>
-
-  <div class="reveal">
-    <div class="slides">
-
-      <section>
-        <header>
-          <h1>Slide Decks with Pandoc</h1>
-          <h5>Credit goes to <a href='https://github.com/braje'>github.com/braje</a> & <a href='http://johnmacfarlane.net/pandoc/'>Pandoc</a></h5>
-        </header>
-        <h3 style='padding: 20px;'>Kyle Gwinnup</h3>
-	<footer>
-	  <a href='http://kgwinnup.github.io'>http://kgwinnup.github.io/</a>
-	</footer>
-      </section>
+<div id="header">
+<h1 class="title">Slide Decks with Pandoc</h1>
+<h1 class="subtitle">Credit goes to <a href='https://github.com/braje'>github.com/braje</a> & <a href='http://johnmacfarlane.net/pandoc/'>Pandoc</a></h1>
+<h2 class="author">Kyle Gwinnup</h2>
+<h3 class="date">date here</h3>
+</div>
 <section id="how-to-use" class="slide level1">
 <h1>How to use</h1>
 <ol start="0" type="1">
@@ -76,49 +56,5 @@ object HelloWorld extends App{
 }</code></pre>
 </section>
 </section>
-    </div> <!-- end of reveal -->
-  </div>
-
-    <script src="reveal.js/lib/js/head.min.js"></script>
-    <script src="reveal.js/js/reveal.min.js"></script>
-    <script>
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        rollingLinks: false,
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/fade/none
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        // width: 1920, //1280,
-        // height: 1080, //1024,
-        width: 1280,
-        height: 1024,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.05,
-
-        // Bounds for smallest/largest possible scale to apply to content
-        minScale: 0.5,
-        maxScale: 2.0,
-
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-          { src: 'reveal.js/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'highlight/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-//          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-//          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-        ]});
-    </script>
-    <script>
-//      ("section").attr('data-background','img/haskell3.jpg');
-    </script>
 </body>
 </html>

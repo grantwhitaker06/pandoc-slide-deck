@@ -3,6 +3,7 @@
 [subtitle]: <> (Credit goes to <a href='https://github.com/braje'>github.com/braje</a> & <a href='http://johnmacfarlane.net/pandoc/'>Pandoc</a>)
 [site]: <> (<a href='http://kgwinnup.github.io'>http://kgwinnup.github.io/</a>)
 [transition]: <> (zoom)
+[template]: <> (default)
 
 -------------------------------------------------------------------
 
