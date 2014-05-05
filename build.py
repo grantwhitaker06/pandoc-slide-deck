@@ -22,14 +22,7 @@ def readSlidesMd(f):
     return v_list
 
 def parseVarsFromComments(v_list, variables):
-    '''
-    Parses a list of the Markdown "Comments" and gets the variables from them.
-    Default variable values will be overwritten with the newly parsed values.
-
-    @param v_list list of markdown comments
-    @param variables dictionary of default variable values
-    @return variables dictionary
-    '''
+    """returns a dictionary of all the variables defined at the top of your markdown slides"""
     for v in v_list:
         if len(v) > 2:
             key = (re.compile('.*?((?:[a-z][a-z]+))', re.IGNORECASE|re.DOTALL)).search(v).group(1)
@@ -39,14 +32,7 @@ def parseVarsFromComments(v_list, variables):
     return variables
 
 def buildVariablesString(variables):
-    '''
-    Given all the parsed variables, build the command string including the standard flags
-
-    @param variables dictionary of variable values
-    @param flags string of the standard flags
-
-    @return string
-    '''
+    """return a string with all the variables defined for pandoc including flags"""
     vstr = ""
     for key,val in variables.iteritems():
         vstr += "-M " + key + "=\"" + val + "\" "
@@ -65,10 +51,11 @@ def buildFlagsString(default_flags, variables):
 def buildCommandString(flags, variables):
     return "pandoc " + flags + " slides.md " + variables + " -o index.html"
 
-unparsed_variables = readSlidesMd("slides.md")
-parsed_variables = parseVarsFromComments(unparsed_variables, default_variables)
-variable_string = buildVariablesString(parsed_variables)
-flags = buildFlagsString(default_flags, parsed_variables)
-command = buildCommandString(flags, variable_string)
-print command
-subprocess.call(command, shell=True)
+if __name__ == "__main__":
+    unparsed_variables = readSlidesMd("slides.md")
+    parsed_variables = parseVarsFromComments(unparsed_variables, default_variables)
+    variable_string = buildVariablesString(parsed_variables)
+    flags = buildFlagsString(default_flags, parsed_variables)
+    command = buildCommandString(flags, variable_string)
+    print command
+    subprocess.call(command, shell=True)
