@@ -18,10 +18,8 @@
 
 # Notes on usage
 
-* Pandoc key/val pairs are passed into the coorisponding `$<varname>$`
+* Pandoc key/val pairs are passed into the corresponding `$<varname>$`
 * Variables are defined using link labels at the top of the Markdown
   file
     + They will not show up in the document
-    + I realize this is hacky, but necessary to keep Markdown integrety
-
-
+    + I realize this is hacky, but necessary to keep Markdown integrity
