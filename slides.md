@@ -26,18 +26,3 @@
 
 -------------------------------------------------------------------
 
-## List example
-
-* list item 1
-* list item 2
-* list item 3
-    + sublist item
-
-## Code example
-
-```scala
-//Simple Hello World 
-object HelloWorld extends App{
-  println("Hello World")
-}
-```
