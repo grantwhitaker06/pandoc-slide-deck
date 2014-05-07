@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-    <link rel="stylesheet" href="reveal.js/css/theme/gwinnup.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
 
     <!-- For syntax highlighting -->
     <!-- <link rel="stylesheet" href="highlight/styles/pojoaque.css"> -->
@@ -45,14 +45,25 @@
 <li>Never use powerpoint again</li>
 </ol>
 </section>
-<section id="notes-on-usage" class="slide level1">
-<h1>Notes on usage</h1>
+<section id="passing-parameters-into-templates" class="slide level1">
+<h1>Passing parameters into templates</h1>
 <ul>
 <li>Pandoc key/val pairs are passed into the corresponding <code>$&lt;varname&gt;$</code></li>
 <li>Variables are defined using link labels at the top of the Markdown file
 <ul>
 <li>They will not show up in the document</li>
 <li>I realize this is hacky, but necessary to keep Markdown integrity</li>
+</ul></li>
+</ul>
+</section>
+<section id="themes-and-templates" class="slide level1">
+<h1>Themes and templates</h1>
+<ul>
+<li>HTML templates are stored in templates/</li>
+<li>If no template variable is set, the default is used</li>
+<li>Reveal.js has several included themes
+<ul>
+<li>beige, default, moon, night, serif, simple, sky, solarized</li>
 </ul></li>
 </ul>
 </section>

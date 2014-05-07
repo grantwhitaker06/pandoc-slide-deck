@@ -4,6 +4,7 @@
 [site]: <> (<a href='http://kgwinnup.github.io'>http://kgwinnup.github.io/</a>)
 [transition]: <> (zoom)
 [template]: <> (default)
+[theme]: <> (beige)
 
 -------------------------------------------------------------------
 
@@ -17,10 +18,19 @@
 
 ------------------------------------------------------------------
 
-# Notes on usage
+# Passing parameters into templates
 
 * Pandoc key/val pairs are passed into the corresponding `$<varname>$`
 * Variables are defined using link labels at the top of the Markdown
   file
     + They will not show up in the document
     + I realize this is hacky, but necessary to keep Markdown integrity
+
+------------------------------------------------------------------
+
+# Themes and templates
+
+* HTML templates are stored in templates/
+* If no template variable is set, the default is used
+* Reveal.js has several included themes
+    + beige, default, moon, night, serif, simple, sky, solarized 
