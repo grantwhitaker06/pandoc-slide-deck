@@ -10,7 +10,7 @@
 # How to use
 
 0. Download <a href='http://johnmacfarlane.net/pandoc/'>Pandoc</a>
-1. Fork this repo: <a href="#">pandoc slidedeck creator</a>
+1. Fork this repo: <a href="https://github.com/kgwinnup/pandoc-slide-deck">pandoc slidedeck creator</a>
 2. Use pandoc markdown and create your slides
 3. Never use powerpoint again
 
@@ -24,5 +24,4 @@
     + They will not show up in the document
     + I realize this is hacky, but necessary to keep Markdown integrety
 
--------------------------------------------------------------------
 
