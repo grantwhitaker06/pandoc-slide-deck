@@ -12,7 +12,8 @@
 0. Download <a href='http://johnmacfarlane.net/pandoc/'>Pandoc</a>
 1. Fork this repo: <a href="https://github.com/kgwinnup/pandoc-slide-deck">pandoc slidedeck creator</a>
 2. Use pandoc markdown and create your slides
-3. Never use powerpoint again
+3. ./build.py
+4. Never use powerpoint again
 
 ------------------------------------------------------------------
 
