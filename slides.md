@@ -1,6 +1,6 @@
 [title]: <> (Slide Decks with Pandoc)
 [author]: <> (Kyle Gwinnup)
-[subtitle]: <> (Credit goes to <a href='https://github.com/braje'>github.com/braje</a> & <a href='http://johnmacfarlane.net/pandoc/'>Pandoc</a>)
+[subtitle]: <> (Credit to <a href='https://github.com/braje'>github.com/braje</a> & <a href='http://johnmacfarlane.net/pandoc/'>Pandoc</a>)
 [site]: <> (<a href='http://kgwinnup.github.io'>http://kgwinnup.github.io/</a>)
 [transition]: <> (zoom)
 [template]: <> (default)
@@ -14,7 +14,7 @@
 2. Use pandoc markdown and create your slides
 3. Never use powerpoint again
 
--------------------------------------------------------------------
+------------------------------------------------------------------
 
 # Notes on usage
 

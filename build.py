@@ -41,9 +41,9 @@ def buildVariablesString(variables):
 
 def templateStringParameter(template_value=None):
     if template_value:
-        return " --template=" + template_value + ".html "
+        return " --template=templates/" + template_value + ".html "
     else:
-        return " --template=default.html "
+        return " --template=templates/default.html "
 
 def buildFlagsString(default_flags, variables):
     return default_flags + templateStringParameter(variables['template'])
